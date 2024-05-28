@@ -1,0 +1,1670 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:orientation="vertical"
+        android:background="@drawable/ludo_game_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/exit_button_layout"
+        android:gravity="right"
+        android:background="#00000000"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/exit_game"
+            android:text="Exit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp">
+        </Button>
+
+        <TextView
+            android:id="@+id/tvdice"
+            android:text="0"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dashboard"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textSize="50dp"
+            android:textColor="@color/white"
+            android:text="Ludo Game"
+            android:layout_marginTop="150dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <Button
+            android:text="Let's Play"
+            android:layout_gravity="center"
+            android:layout_marginTop="150dp"
+            android:id="@+id/new_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Button>
+
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:id="@+id/select_players_layout"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginTop="180dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:text="Select Players"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+
+
+
+            <Button
+                android:id="@+id/plyaers2"
+                android:text="2"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+            <Button
+                android:id="@+id/plyaers3"
+                android:text="3"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+            <Button
+                android:id="@+id/plyaers4"
+                android:text="4"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </Button>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/gameboard"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/Green_Dashboard"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Player 2"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+                            <ImageView
+                                android:src="@drawable/account"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/player1Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_weight="1"
+                            android:background="#00FF6A"
+                            android:padding="5dp"
+                            tools:ignore="DuplicateIds">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#000000">
+
+                                <ImageView
+                                    android:id="@+id/dice_green"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/dice_blank"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/yellow_Dashboard"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/player1Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="#FFD600"
+                            android:padding="5dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#000000">
+
+                                <ImageView
+                                    android:id="@+id/dice_yellow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/dice_blank"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Player 3"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+                            <ImageView
+                                android:src="@drawable/account"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/yourLinearLayout"
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <LinearLayout
+                    android:id="@+id/A"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4">
+
+
+                    <LinearLayout
+                        android:layout_margin="1dp"
+                        android:background="#00FF0B"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:padding="2dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical"
+                            android:background="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:background="@color/white"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:id="@+id/block_green_4"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_green"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/ggg4"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_green"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+
+
+
+
+
+
+                                <LinearLayout
+                                    android:id="@+id/block_green_3"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_green"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/ggg3"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_green"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:background="@color/white"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_green_1"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_green"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/ggg1"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_green"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+
+
+                                    <LinearLayout
+                                        android:id="@+id/block_green_2"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_green"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/ggg2"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_green"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_23"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_22"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_green"
+                                android:id="@+id/block_21"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_20"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_19"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_18"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_24"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_62"
+                                android:background="#F6FF00"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_63"
+                                android:background="#F6FF00"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_64"
+                                android:background="#F6FF00"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_65"
+                                android:background="#F6FF00"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_66"
+                                android:background="#F6FF00"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_25"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_26"
+                                android:background="@drawable/safezone_yellow"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_27"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_28"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_29"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_margin="1dp"
+                        android:background="#F6FF00"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:padding="2dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical"
+                            android:background="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:background="@color/white"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:id="@+id/block_yellow_1"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_yellow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/yyy1"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_yellow_removebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/block_yellow_2"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_yellow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/yyy2"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_yellow_removebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:background="@color/white"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_yellow_4"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_yellow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/yyy4"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_yellow_removebg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/block_yellow_3"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_yellow"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/yyy3"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_yellow_removebg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/B"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_12"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_13"
+                                android:background="@drawable/safezone_green"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_14"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_15"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_16"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_17"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_11"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:id="@+id/block_57"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:id="@+id/block_58"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:id="@+id/block_59"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:id="@+id/block_60"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:id="@+id/block_61"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+
+
+                            <LinearLayout
+                                android:id="@+id/block_10"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_9"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_red"
+                                android:id="@+id/block_8"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_7"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_6"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_5"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:background="#000000"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:background="#F6FF00"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_83"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_81"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_80"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_82"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:background="#00FF0B"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_76"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/block_77"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_79"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/block_78"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="#3352FF"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_87"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/block_86"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_84"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:id="@+id/block_85"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:background="#FF0600"
+                            android:orientation="horizontal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_75"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_73"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_74"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_72"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_31"
+                                style="@style/Horizontal_Blocks">
+
+                                <LinearLayout
+                                    android:id="@+id/block_30"
+                                    style="@style/Vertical_Blocks"></LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_32"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_33"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_yellow"
+                                android:id="@+id/block_34"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_35"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_36"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_71"
+                                android:background="#3352FF"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_70"
+                                android:background="#3352FF"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_69"
+                                android:background="#3352FF"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_68"
+                                android:background="#3352FF"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_67"
+                                android:background="#3352FF"                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_37"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp">
+
+                            <LinearLayout
+                                android:id="@+id/block_43"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_42"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/block_41"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_40"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_blue"
+                            android:id="@+id/block_39"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_38"
+                                style="@style/Horizontal_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/C"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4">
+
+
+
+                    <LinearLayout
+                        android:layout_margin="1dp"
+                        android:background="#FF0600"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:padding="2dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical"
+                            android:background="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:background="@color/white"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:id="@+id/block_red_4"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_red"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/rrr4"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_red_emovebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/block_red_2"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_red"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/rrr2"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_red_emovebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:background="@color/white"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_red_3"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_red"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/rrr3"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_red_emovebg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/block_red_1"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_red"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/rrr1"
+                                            android:layout_width="15dp"
+                                            android:layout_height="17dp"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_red_emovebg"></View>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:orientation="horizontal"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_4"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_3"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_2"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_1"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_red"
+                                android:id="@+id/block_0"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_51"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_56"
+                                android:background="#FF0600"                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_55"
+                                android:background="#FF0600"                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_54"
+                                android:background="#FF0600"                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_53"
+                                android:background="#FF0600"                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_52"
+                                android:background="#FF0600"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/block_50"
+                                style="@style/Vertical_Blocks"></LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/block_44"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_45"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_46"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:background="@drawable/safezone_blue"
+                                android:id="@+id/block_47"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_48"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/block_49"
+                                style="@style/Vertical_Blocks">
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_margin="1dp"
+                        android:background="#3352FF"
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:padding="2dp"
+                            android:layout_margin="20dp"
+                            android:orientation="vertical"
+                            android:background="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <LinearLayout
+                                android:background="@color/white"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:id="@+id/block_blue_3"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_blue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/bbb3"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_blue_removebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/block_blue_1"
+                                    android:padding="1dp"
+                                    android:layout_margin="13dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/oval_background_blue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <View
+                                        android:id="@+id/bbb1"
+                                        android:layout_margin="3dp"
+                                        android:background="@drawable/token_blue_removebg"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    </View>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp">
+
+                                <LinearLayout
+                                    android:background="@color/white"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/block_blue_4"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_blue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/bbb4"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_blue_removebg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/block_blue_2"
+                                        android:padding="1dp"
+                                        android:layout_margin="13dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/oval_background_blue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <View
+                                            android:id="@+id/bbb2"
+                                            android:layout_margin="3dp"
+                                            android:background="@drawable/token_blue_removebg"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+                                        </View>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/Red_Dashboard"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="50dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Player 1"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+                            <ImageView
+                                android:src="@drawable/account"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/player1Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_weight="1"
+                            android:background="#FF0000"
+                            android:padding="5dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#000000">
+
+                                <ImageView
+                                    android:id="@+id/dice_red"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/dice_blank"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/Blue_Dashboard"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/player1Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_weight="1"
+                            android:background="#0026FF"
+                            android:padding="5dp"
+                            tools:ignore="DuplicateIds">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#000000">
+
+                                <ImageView
+                                    android:id="@+id/dice_blue"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/dice_blank"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:text="Player 4"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:textAlignment="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </TextView>
+
+                            <ImageView
+                                android:src="@drawable/account"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
